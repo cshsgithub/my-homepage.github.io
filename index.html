@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <style type="text/css">
+        body, html {
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+        }
+        
+        video {
+            position: absolute;
+            top: 46%;
+            left: 50%;
+            width: 100%;
+            height: 120vh;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .videoContainer {
+            margin: 0;
+        }
+        li{
+            color: rgba(255, 255, 255, 0);
+            font-size: 50px;
+            z-index: 0; 
+            position: relative;
+            text-align: center;
+        }
+        h1{
+            color: rgba(30, 189, 180, 1);
+            font-size: 60px;
+            z-index: 0; 
+            top:8vh;
+            left:25vw;
+            text-align: center;
+            position: absolute;
+        }
+        h2,h3,h4,h5{
+            text-align: center;
+        }
+        h4{
+            font-size: 45px;
+            position:relative;
+            top:-10vh;
+        }
+        h5{
+            font-size: 4vh;
+            position:absolute;
+            top:265vh;
+            left:43%;
+        }
+        h6{
+            font-size: 4vh;
+            position:absolute;
+            top:360vh;
+            left:43%;
+        }
+        
+        .send{
+            left:40%;
+            position:absolute;
+            top:370vh;
+        }
+        .myself{
+            color: rgba(30, 189, 180, 1);
+            font-size: 3vh;
+            z-index: -1;
+            position: absolute;
+            text-align:left;
+            padding:5%;
+        }
+
+        header {
+            background-color: #2118a428;
+            padding: 0vh;
+            text-align: center;
+            position: fixed; 
+            width: 100%; 
+            z-index: 10;
+            top:0;
+            margin: 0; 
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 8vh;
+        }
+        nav a {
+            text-decoration: none;
+            color: #3d6c9e;
+            font-size: 36px;
+        }
+        nav a:hover{
+            text-decoration: none;
+            color: #9e7f3d;
+            font-size: 37px;
+            background-color: rgba(134, 90, 237, 0.288);
+            padding-top: 13px;
+            padding-bottom: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        #first {
+            width: 50vh;
+            margin: 40vh auto;
+            padding: 30vh;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 25px;
+            position:absolute;
+            top:60vh;
+            left:18%;
+        }
+        #first:hover{
+            width: 50.1vh;
+            margin: 40vh auto;
+            padding: 30.1vh;
+            background-color: #d8d8e5;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 25px;
+            position:absolute; 
+            top:59.9vh;
+            left:18%;   
+        }
+        #second {
+            margin: 68vh auto;
+            padding: 50px;
+            width: 80vh;
+            height:50px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 25px;
+            position: absolute;
+            top: 220vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(to right, #ff7e5f, #ccfe7b);
+            }
+        #second:hover {
+            margin: 68vh auto;
+            padding: 52px;
+            width: 80vh;
+            height:50px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 25px;
+            position: absolute;
+            top: 220vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(to right, #ff7e5f, #ccfe7b);
+            }
+        #third {
+            margin: 85vh auto;
+            padding: 50px;
+            width: 80vh;
+            height:50px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 25px;
+            position: absolute;
+            top: 220vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(to right, #fffa5f, #6af1b6);
+            }
+        #third:hover {
+            margin: 85vh auto;
+            padding: 52px;
+            width: 80vh;
+            height:50px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 25px;
+            position: absolute;
+            top: 220vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(to right, #fffa5f, #6af1b6);
+            }
+        #forth {
+            margin: 102vh auto;
+            padding: 50px;
+            width: 80vh;
+            height:50px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 25px;
+            position: absolute;
+            top: 220vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(to right, #5ff2ff, #d07bfe);
+            }
+        #forth:hover {
+            margin: 102vh auto;
+            padding: 52px;
+            width: 80vh;
+            height:50px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 25px;
+            position: absolute;
+            top: 220vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(to right, #5ff2ff, #d07bfe);
+            }
+        #fifth {
+            margin: 119vh auto;
+            padding: 50px;
+            width: 80vh;
+            height:50px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 25px;
+            position: absolute;
+            top: 220vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(to right, #ff5f5f, #f164a8);
+            }
+        #fifth:hover {
+            margin: 119vh auto;
+            padding: 52px;
+            width: 80vh;
+            height:50px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 25px;
+            position: absolute;
+            top: 220vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(to right, #ff5f7a, #f164a8);
+            }
+        #sixth {
+            margin: 159vh auto;
+            padding: 60px;
+            width: 80vh;
+            height:278px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 25px;
+            position: absolute;
+            top: 238vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            }
+        #seventh {
+            margin: 136vh auto;
+            padding: 50px;
+            width: 80vh;
+            height:50px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 25px;
+            position: absolute;
+            top: 220vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(to right, #52a4ec, #f164a8);
+            }
+        #seventh:hover {
+            margin: 136vh auto;
+            padding: 52px;
+            width: 80vh;
+            height:50px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 25px;
+            position: absolute;
+            top: 220vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(to right, #52a4ec, #f164a8);
+            }
+        .td1{
+            left:2vw;
+            top:2vh;
+            position:absolute;
+        }
+        .td2{
+            left:30%;
+            top:2svh;
+            font-size: 20px;
+            position:absolute;
+        }
+        .td3{
+            left:2vw;
+            top:8vh;
+            position:absolute;
+        }
+        .td4{
+            left:2vw;
+            top:2vh;
+            position:absolute;
+        }
+        .td5{
+            left:2vw;
+            top:8vh;
+            position:absolute;
+        }
+        .td6{
+            left:30%;
+            top:2.5vh;
+            font-size: 20px;
+            position:absolute;
+        }
+        .td7{
+            left:2vw;
+            top:2vh;
+            position:absolute;
+        }
+        .td8{
+            left:2vw;
+            top:8vh;
+            position:absolute;
+        }
+        .td9{
+            left:30%;
+            top:2vh;
+            font-size: 20px;
+            position:absolute;
+        }
+        .td10{
+            left:2vw;
+            top:2vh;
+            position:absolute;
+        }
+        .td11{
+            left:2vw;
+            top:8vh;
+            position:absolute;
+        }
+        .td12{
+            left:30%;
+            top:2.5vh;
+            font-size: 20px;
+            position:absolute;
+        }
+        .td13{
+            left:55%;
+            top:20%;
+            font-size: 25px;
+            position:absolute;
+        }
+        .td14{
+            left:55%;
+            top:45%;
+            font-size:25px;
+            position:absolute;
+        }
+        .td15{
+            left:55%;
+            top:70%;
+            font-size:25px;
+            position:absolute;
+        }
+        .td16{
+            left:2vw;
+            top:2vh;
+            position:absolute;
+        }
+        .td17{
+            left:2vw;
+            top:8vh;
+            position:absolute;
+        }
+        .td18{
+            left:30%;
+            top:2.5vh;
+            font-size: 20px;
+            position:absolute;
+        }
+        #town{
+            position: absolute;
+            top: 220vh;
+            left: 50%;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        #profile {
+            text-align: left;
+            position: absolute;
+            top: 0; 
+            left: 1vw; 
+        }
+        #presentation{
+            text-align: left;
+            position:absolute;
+            font-size: 40px;
+            left:10vw;
+            right:10vh;
+            top:190vh;
+        }
+        .contact-form {
+            width: 35vh;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position:absolute;
+            top:373vh;
+            left:25%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+@media screen and (max-width: 600px) {
+    nav {
+        display: block;
+        text-align: center;
+    }
+
+    nav li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://cshsgithub.github.io/209.github.io/">寝室主页</a></li>
+                <li><a href="#videoContainer">我的首页</a></li>
+                <li><a href="#profile">个人资料</a></li>
+                <li><a href="#town">家乡介绍</a></li>
+                <li><a href="#hobby">兴趣爱好</a></li>
+                <li><a href="#contact">联系方式</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>
+        Welcome to my homepage!
+    </h1>
+  <div id="videoContainer">
+    <video autoplay muted loop>
+        <source src="./image/background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div> 
+
+  <table>
+        <tbody>
+            <tr>
+                <td width="1309" height="601">&nbsp;</td>
+            </tr>
+        </tbody>
+</table>
+<section id="first">
+        <div id="profile">
+            <p></p>
+            <h2>about me</h2>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;你好，我叫陈书航。来自湖北省黄冈市,今年刚满18岁，生日就不透露了。现在是华科计算机类2302班的一名新生，很高兴能认识大家。兴趣爱好广泛，包括但不限于篮球、乒乓球、游戏、听音乐、看书。目前，我正在努力提高自己的编程技能，希望在未来能够参与一些有挑战性的项目。虽然性格偏内向一点，但还是很乐意交到更多的朋友。</p>
+            <h3>基本信息</h3>
+
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;·姓名:陈书航&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;·qq号:1412681529</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;·性别:男&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;·手机号:13477612681</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;·年龄:18岁&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;·邮箱:csh1412681529@gmail.com </p>
+            <p>&nbsp;</p>
+        </div>
+    </section>
+    <div id="presentation">
+    <h4>家乡-黄州</h4>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;我的家乡黄州，位于湖北省黄冈市。黄冈市历史悠久，具有丰富的历史文化底蕴。黄冈市区内有一些古老的建筑、文化遗址，反映了其丰富的历史。我的家乡以农业为主，盛产优质的水稻和丰富的水果。近年来，一些现代化产业也逐渐兴起，为城市带来了繁荣。虽然经济并不发达，但也是宜居城市。北宋著名诗人苏轼曾被贬于此，并写下《赤壁赋》等名篇，著名的东坡赤壁也位于此。黄州是一个充满活力和温馨的地方，我非常喜欢这里的一切。希望有机会你也能亲自来感受一下黄州的独特魅力！</p>
+    </div>
+    <div>
+        <img src="image/hometown.jpg" width="1309" height="601" alt="" id="town"/>
+        </img>
+    </div>
+    <div>
+        <h5 id="hobby">
+            兴趣爱好
+        </h5>
+    </div>
+<section id="second">
+    <div id="table1">
+        <table>
+            <tr>
+                <td class="td1">my favorite game</td>
+                <td class="td2">这片银河中有名为“星神”的存在，他们造就现实，抹消星辰，在无数“世界”中留下他们的痕迹。你——一名特殊的旅客，将与继承“开拓”意志的同伴一起，乘坐星穹列车穿越银河，沿着某位“星神”曾经所行之途前进。愿此行，终抵群星。</td>
+            </tr>
+            <tr>
+                <td class="td3">&nbsp;&nbsp;&nbsp;崩坏:星穹铁道</td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section id="third">
+    <div id="table2">
+        <table>
+            <tr>
+                <td class="td4">my favorite sports</td>
+                <td class="td5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乒乓球</td>
+            </tr>
+            <tr>
+                <td class="td6">我总共学了3年乒乓球，算是业余水平。虽然技术一般，但不影响我对乒乓球的喜爱。与人在球桌上切磋一场无疑是令人愉悦的，我也因此获得了很多珍贵的友谊。</td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section id="forth">
+    <div id="table3">
+        <table>
+            <tr>
+                <td class="td7">my favorite music</td>
+                <td class="td8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;水龙吟</td>
+            </tr>
+            <tr>
+                <td class="td9">《水龙吟》是游戏《崩坏：星穹铁道》的剧情插曲，配上精彩绝伦的游戏剧情和气势磅礴的画面，足以让你感到巨大的震撼！在B站上线当天登上全站排行榜前三名，有海外玩家留言“汉语是一门美丽的语言，这首歌太棒了。”</td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section id="fifth">
+    <div id="table4">
+        <table>
+            <tr>
+                <td class="td10">my favorite thing</td>
+                <td class="td11">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;看书</td>
+            </tr>
+            <tr>
+                <td class="td12">虽然我比较浮躁，很难静心做事。但偶尔安静下来，在秋日的下午，吹着清凉的微风，在公园的躺椅上静静地看着有趣的书，真是让人心旷神怡，回味无穷！</td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section id="seventh">
+    <div id="table6">
+        <table>
+            <tr>
+                <td class="td16">my favorite exercise</td>
+                <td class="td17">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;骑自行车</td>
+            </tr>
+            <tr>
+                <td class="td18">我从小便喜欢骑自行车，在傍晚的湖边骑车，赏着湖景吹着微风，放松身心的同时锻炼了身体，何乐而不为呢。即便现在我也每天骑车上课，身体最重要！</td>
+            </tr>
+        </table>
+    </div>
+</section>
+<div>
+    <h6 id="contact">
+        联系方式
+    </h6>
+
+</div>
+<section id="sixth">
+    <div id="table5">
+        <table>
+            <tr>
+                <td class="td13">寝室:东十三209</td>
+                <td class="td14">电话:13477612681</td>
+                <td class="td15">地点:寝室or西十二</td>
+            </tr>
+        </table>
+    </div>
+</section>
+<div class="contact-form">
+    <h7>Contact Me</h7>
+
+    <form id="contactForm" action="send_email.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
